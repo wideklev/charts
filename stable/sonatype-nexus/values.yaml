@@ -54,6 +54,10 @@ nexusProxy:
   # secrets:
   #   keystore: ""
   #   password: ""
+  resources: {}
+    # requests:
+      # cpu: 250m
+      # memory: 256Mi
 
 persistence:
   enabled: true
@@ -77,6 +81,10 @@ nexusBackup:
   imagePullPolicy: IfNotPresent
   env:
     targetBucket:
+  resources: {}
+    # requests:
+      # cpu: 250m
+      # memory: 256Mi
   nexusAdminPassword: "admin123"
   persistence:
     enabled: true
