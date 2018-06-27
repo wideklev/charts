@@ -97,6 +97,8 @@ spec:
             - name: SESSION_TTL
               value: "86400000"
             {{- end }}
+          resources:
+{{ toYaml .Values.nexusProxy.resources | indent 12 }}
           ports:
             - containerPort: {{ .Values.nexusProxy.port }}
               name: nexus-proxy
@@ -130,6 +132,8 @@ spec:
               value: "60"
             - name: TRIGGER_FILE
               value: .backup
+          resources:
+{{ toYaml .Values.nexusBackup.resources | indent 12 }}
           volumeMounts:
             - mountPath: /nexus-data
               name: nexus-data
